@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
+#场景：目前职位测试，需按文档校验页面字段字符长度（边界值)
+#从excel文档中获取字符长度限制，生成方便检查的1234567890+的整数
+# 保存于word中，方便读取（excel中大于15位整数会使文件损坏）
 # 读写高版本 excel
 import openpyxl
 #创建并写入word文档
 import docx
 import datetime
 #创建内存中的word文档对象
-#make_docx = docx.Document('D:/vkv/实战/excel取数存储到word/save.docx')
+#make_docx = docx.Document('D:/123/实战/excel取数存储到word/save.docx')
 make_docx = docx.Document()
 
 def get_num(Data2int):
@@ -28,9 +31,10 @@ def get_num(Data2int):
     #print(s)
     return s
 
-#excel路径  ‪C:/Users/kte/Desktop/拦截数据搜集模板-dk.xlsx   home path='C:/Users/24954/Desktop/网安测试记录.xlsx'
-excel_path = 'c:/Users/kte/Desktop/'
-excel_name = '拦截数据搜集模板-dk2.xlsx'
+#excel路径  ‪C:/123/dk.xlsx
+excel_path = 'c:/123/'
+excel_name = 'dk2.xlsx'
+
 #打开文件：
 rw_excel = openpyxl.load_workbook(excel_path+excel_name)
 #查找文件判断
@@ -41,6 +45,7 @@ else:
 #获取sheet：
 work_sheet = rw_excel.worksheets[0] #通过表名获取
 print('该sheet页为'+work_sheet.title)
+
   #  read_excel.get_sheet_by_name("Sheet2")  建议不适用这个过时的方法
 #获取行数和列数：
 rows = work_sheet.max_row  #获取行数
@@ -97,7 +102,7 @@ while go_row <= rows:
     #print('写入数据为@@@@@@第'+str(go_row)+'保存成功')
     #换word保存文件
 #    t = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-#    save_path = 'D:/vkv/实战/excel取数存储到word/save'+t+'.docx'
+#    save_path = 'D:/123/实战/excel取数存储到word/save'+t+'.docx'
 #    make_docx.save(save_path)
 
     #第二次循环Data2int+1
@@ -124,6 +129,6 @@ print(excel_path_full)
 #print('保存成功'+excel_path_full)
 # 换word保存文件
 t = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
-save_path = 'D:/vkv/实战/excel取数存储到word/save' + t + '.docx'
+save_path = 'D:/123/实战/excel取数存储到word/save' + t + '.docx'
 make_docx.save(save_path)
 print(save_path+'保存成功!!!!')
