@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #场景：目前职位测试，需按文档校验页面字段字符长度（边界值)
 #从excel文档中获取字符长度限制，生成方便检查的1234567890+的整数
-# 保存于word中，方便读取（excel中大于15位整数会使文件损坏）
+#保存于word中，方便测试结果  （excel中大于15位整数会使文件损坏）
 # 读写高版本 excel
 import openpyxl
 #创建并写入word文档
@@ -10,6 +10,7 @@ import datetime
 #创建内存中的word文档对象
 #make_docx = docx.Document('D:/123/实战/excel取数存储到word/save.docx')
 make_docx = docx.Document()
+
 
 def get_num(Data2int):
     # 定义一个空格字符串
