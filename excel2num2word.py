@@ -11,7 +11,6 @@ import datetime
 #make_docx = docx.Document('D:/123/实战/excel取数存储到word/save.docx')
 make_docx = docx.Document()
 
-
 def get_num(Data2int):
     # 定义一个空格字符串
     s = ''
